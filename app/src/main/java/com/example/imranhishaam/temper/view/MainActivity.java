@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
     for (Map.Entry<String, ArrayList<JobModel>> list : jobList.entrySet())
     {
-      pagerAdapter.addFragment(MainFragment.createInstance(list.getValue()), list.getValue(), list.getKey());
+      pagerAdapter.addFragment(MainFragment.Companion.createInstance(list.getValue()), list.getValue(), list.getKey());
     }
 
     viewPager.setAdapter(pagerAdapter);

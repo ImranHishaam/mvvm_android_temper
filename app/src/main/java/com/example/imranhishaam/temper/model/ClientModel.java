@@ -55,6 +55,9 @@ public class ClientModel implements Parcelable{
     }
 
     public String getDescription() {
+        if (description == null) {
+            return "";
+        }
         return description;
     }
 

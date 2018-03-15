@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
@@ -83,4 +85,15 @@ dependencies {
 
     testImplementation testingDependencies.junit
     testImplementation testingDependencies.mockito
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    kapt "com.android.databinding:compiler:$android_plugin_version"
+}
+
+kapt {
+    generateStubs = true
+}
+
+repositories {
+    mavenCentral()
 }
