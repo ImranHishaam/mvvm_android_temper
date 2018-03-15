@@ -63,6 +63,7 @@
                 android:gravity="center"
                 android:layout_marginTop="100dp"
                 android:textStyle="bold"
+                android:textSize="25dp"
                 android:text="@{mainViewModel.messageLabel}"
                 app:visibility="@{mainViewModel.jobLabel}"/>
 
