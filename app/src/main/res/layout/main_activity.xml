@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="com.example.imranhishaam.temper.viewmodel.MainViewModel"/>
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <include
+                android:id="@+id/custoolbar"
+                layout="@layout/app_actionbar"
+                />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabTextColor="@android:color/background_dark"
+                android:background="@color/white"
+                app:tabSelectedTextColor="@android:color/white"
+                app:tabIndicatorColor="@color/temper_theme_color"
+                app:tabBackground="@color/white"
+                app:tabIndicatorHeight="4dp"
+                app:tabMode="scrollable"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <ProgressBar
+                android:id="@+id/progress_job"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="100dp"
+                app:visibility="@{mainViewModel.jobProgress}"/>
+
+            <TextView
+                android:id="@+id/label_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="100dp"
+                android:textStyle="bold"
+                android:text="@{mainViewModel.messageLabel}"
+                app:visibility="@{mainViewModel.jobLabel}"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/list_job"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="@{mainViewModel::onClickFabLoad}"
+            android:src="@drawable/ic_add_24dp"
+            android:backgroundTint="@color/temper_theme_color"
+            app:borderWidth="0dp"
+            app:layout_behavior="com.example.imranhishaam.temper.utils.ScrollingFABBehavior"/>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

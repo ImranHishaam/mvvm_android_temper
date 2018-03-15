@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Temper</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_header_main_string">Werken met plezier <b>Altijd.</b></string>
+    <string name="action_header_sub_string">Shifts bij jou in de buurt</string>
+    <string name="error_loading_job">There seems to have been some error.</string>
+    <string name="default_loading_job">Press the button to load Jobs!</string>
+</resources>
